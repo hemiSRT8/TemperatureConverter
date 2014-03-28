@@ -44,7 +44,7 @@ public class Listeners {
                 final String CELSIUSES_INPUT = celsiuses.getText();
                 final String FAHRENHEITS_INPUT = fahrenheits.getText();
 
-                if (Validator.inputValidation(celsiuses, fahrenheits, programMessage)) {
+                if (Validator.inputValidation(CELSIUSES_INPUT, FAHRENHEITS_INPUT, programMessage)) {
                     if (!CELSIUSES_INPUT.isEmpty()) {
                         BigDecimal resultBigDecimal = Calculation.convertTemperature(TemperatureType.FAHRENHEIT, parseDouble(CELSIUSES_INPUT));
                         String resultString = String.valueOf(resultBigDecimal);

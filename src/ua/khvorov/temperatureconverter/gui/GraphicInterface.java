@@ -18,13 +18,13 @@ public class GraphicInterface {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         frame.setResizable(false);
-        Dimension SCREEN_SIZE = Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setLocation(SCREEN_SIZE.width / 2 - (frame.getWidth() / 2), //Center of the screen
-                SCREEN_SIZE.height / 2 - (frame.getHeight() / 2));
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         frame.setIconImage(new ImageIcon("images\\icon.png").getImage());
+        frame.add(mainPanel);
         frame.pack();
         frame.setSize(500, 200);
-        frame.add(mainPanel);
+        frame.setLocation(screenSize.width / 2 - (frame.getWidth() / 2), //Center of the screen
+                screenSize.height / 2 - (frame.getHeight() / 2));
     }
 
     private JPanel constructMainPanel() {

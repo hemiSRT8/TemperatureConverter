@@ -9,18 +9,15 @@ import static java.lang.Double.parseDouble;
 public class Validator {
     private static final Pattern PATTERN = Pattern.compile("^-?\\d+\\.?\\d*$");
 
-    public static boolean inputValidation(JTextField celsiuses, JTextField fahrenheits, JLabel programMessage) {
+    public static boolean inputValidation(String celsiuses, String fahrenheits, JLabel programMessage) {
 
-        final String CELSIUSES_INPUT = celsiuses.getText();
-        final String FAHRENHEIS_INPUT = fahrenheits.getText();
-
-        if (Validator.isEmptyInput(CELSIUSES_INPUT, FAHRENHEIS_INPUT)) {
+        if (Validator.isEmptyInput(celsiuses, fahrenheits)) {
             programMessage.setText("Empty input!");
             return false;
-        } else if (Validator.isNotNumber(CELSIUSES_INPUT, FAHRENHEIS_INPUT)) {
+        } else if (Validator.isNotNumber(celsiuses, fahrenheits)) {
             programMessage.setText("Not valid input!");
             return false;
-        } else if (Validator.isInBoundary(CELSIUSES_INPUT, FAHRENHEIS_INPUT)) {
+        } else if (Validator.isInBoundary(celsiuses, fahrenheits)) {
             incorrectTemperatureBoundaryMessage();
             return false;
         }
